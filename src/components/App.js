@@ -41,14 +41,12 @@ class App extends Component {
     return (
       <div id="main">
         {/* Do not remove the main div */}
-           {
-          (this.cityList.map((name, country)=>{
-            return(  
-            
-            <li key={country==="India"}>{name.name}</li>)
-            
-          }))
-        }
+            <ol>
+          {
+            this.cityList.filter(count=> count.country==="India")
+            .map(count=> <li >{count.name}</li>)
+          }
+        </ol>
       </div>
     )
   }
